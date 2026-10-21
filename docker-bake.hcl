@@ -24,6 +24,7 @@ group "fpm-alpine" {
 
 target "apache-83" {
   dockerfile = "8.3/apache/Dockerfile"
+  pull       = true
   args = {
     PHPREDIS_VERSION = PHPREDIS_VERSION
   }
@@ -38,6 +39,7 @@ target "apache-83" {
 
 target "apache-82" {
   dockerfile = "8.2/apache/Dockerfile"
+  pull       = true
   args = {
     PHPREDIS_VERSION = PHPREDIS_VERSION
   }
@@ -53,6 +55,7 @@ target "apache-82" {
 
 target "fpm-alpine-83" {
   dockerfile = "8.3/fpm-alpine/Dockerfile"
+  pull       = true
   args = {
     PHPREDIS_VERSION = PHPREDIS_VERSION
   }
@@ -64,4 +67,3 @@ target "fpm-alpine-83" {
   cache-to   = ["type=registry,ref=${REGISTRY}/wordpress:cache-fpm-alpine-83,mode=max"]
   platforms  = ["linux/amd64", "linux/arm64"]
 }
-
